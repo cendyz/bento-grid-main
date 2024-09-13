@@ -1,0 +1,311 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+textarea {
+  resize: vertical;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+:root {
+  --purple-100: hsl(254, 88%, 90%);
+  --purple-500: hsl(256, 67%, 59%);
+  --yellow-100: hsl(31, 66%, 93%);
+  --yellow-500: hsl(39, 100%, 71%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 7%);
+}
+
+body {
+  height: 100vh;
+  background-color: #f5f5f5;
+  font-family: "DM Sans", system-ui;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.box {
+  margin-bottom: 2em;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.box-padding {
+  padding: 0.8em;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 1em;
+  max-width: 100%;
+}
+.card__text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1;
+}
+.card__social {
+  padding: 2em;
+  background-color: var(--purple-500);
+  text-align: center;
+  color: var(--white);
+}
+.card__social-title {
+  font-size: 4.5rem;
+  font-weight: 500;
+  line-height: 1;
+}
+.card__social-title--color {
+  color: var(--yellow-500);
+}
+.card__social-title--italic {
+  font-style: italic;
+}
+.card__social-stars {
+  margin-top: 1.5em;
+  margin-bottom: 0.2em;
+  width: 70%;
+}
+.card__platforms {
+  background-color: var(--white);
+}
+.card__platforms-text {
+  margin-top: 0.8em;
+}
+.card__platforms-img {
+  width: 100%;
+}
+.card__schedules {
+  padding-bottom: 0;
+  background-color: var(--yellow-500);
+}
+.card__schedules-img {
+  margin-top: 1em;
+  width: 70%;
+  display: block;
+}
+.card__graph {
+  background-color: var(--purple-100);
+  text-align: center;
+}
+.card__graph-title {
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  font-size: 2.3rem;
+  font-weight: 500;
+}
+.card__graph-img {
+  width: 100%;
+}
+.card__graph-text {
+  margin: 1em 1.5em;
+  font-size: 1.7rem;
+}
+.card__followers {
+  padding: 1.3em;
+  background-color: var(--purple-500);
+  text-align: center;
+}
+.card__followers-img {
+  width: 80%;
+}
+.card__followers-text {
+  margin: 0 1em;
+  margin-top: 1.2em;
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--white);
+}
+.card__audience {
+  padding: 1.3em;
+  background-color: var(--yellow-100);
+}
+.card__audience-title {
+  font-size: 4rem;
+  font-weight: 500;
+}
+.card__audience-text {
+  margin: 1em 0;
+}
+.card__audience-img {
+  width: 60%;
+}
+.card__create {
+  padding: 1.5em;
+  background-color: var(--yellow-100);
+}
+.card__create-title {
+  margin-bottom: 0.7em;
+  font-size: 2.8rem;
+  font-weight: 500;
+  line-height: 1;
+}
+.card__create-title--span {
+  color: var(--purple-500);
+  font-style: italic;
+}
+.card__create-img {
+  width: 60%;
+}
+.card__ai {
+  padding: 1.5em;
+  background-color: var(--yellow-500);
+}
+.card__ai-title {
+  margin-bottom: 1em;
+  font-size: 2.6rem;
+  font-weight: 500;
+  line-height: 1;
+}
+.card__ai-img {
+  width: 70%;
+}
+
+@media (min-width: 768px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .box {
+    margin-bottom: 0;
+  }
+  .card {
+    grid-template-columns: repeat(4, 150px);
+    grid-template-rows: repeat(2, 84px) 35px 80px 65px 50px;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
+  .card__text {
+    font-size: 1.6rem;
+  }
+  .card__social {
+    padding: 1.3em;
+    grid-area: 1/2/3/4;
+  }
+  .card__social-title {
+    margin-top: 0.2em;
+    font-size: 3.8rem;
+  }
+  .card__social-stars {
+    margin-top: 0.5em;
+    width: 45%;
+  }
+  .card__social-text {
+    font-size: 1.2rem;
+  }
+  .card__platforms {
+    grid-area: 3/2/5/3;
+  }
+  .card__platforms-img {
+    width: 150%;
+  }
+  .card__platforms-text {
+    margin: 0;
+  }
+  .card__schedules {
+    grid-area: 3/3/5/4;
+  }
+  .card__schedules-img {
+    margin-top: 0.3em;
+    width: 100%;
+  }
+  .card__graph {
+    grid-area: 1/4/5/5;
+    text-align: left;
+  }
+  .card__graph-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+  .card__graph-img {
+    width: 180%;
+  }
+  .card__graph-text {
+    margin: 0.5em;
+    font-size: 1rem;
+  }
+  .card__followers {
+    grid-area: 5/3/7/5;
+    padding: 0.7em;
+    display: flex;
+    justify-content: center;
+  }
+  .card__followers-text {
+    align-self: center;
+    margin: 0;
+    margin-left: 0.2em;
+    width: 75%;
+    text-align: left;
+    font-size: 2rem;
+  }
+  .card__audience {
+    grid-area: 5/2/7/3;
+    padding: 0.3em;
+  }
+  .card__audience-text {
+    margin: 0.3em;
+    font-size: 1.05rem;
+  }
+  .card__audience-img {
+    margin-top: 0.5em;
+    width: 85%;
+  }
+  .card__create {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    grid-area: 1/1/4/2;
+    padding: 1em;
+  }
+  .card__create-title {
+    font-size: 1.8rem;
+  }
+  .card__create-img {
+    width: 100%;
+  }
+  .card__ai {
+    grid-area: 4/1/7/2;
+    padding: 1em;
+  }
+  .card__ai-title {
+    font-size: 2.2rem;
+    line-height: 0.9;
+  }
+  .card__ai-img {
+    width: 100%;
+  }
+}/*# sourceMappingURL=main.css.map */
