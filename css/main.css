@@ -50,9 +50,7 @@ table {
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
   background-color: #f5f5f5;
   font-family: "DM Sans", system-ui;
   font-size: 18px;
@@ -68,6 +66,7 @@ body {
 }
 
 .card {
+  margin: auto;
   display: grid;
   grid-template-columns: 1fr;
   padding: 1em;
