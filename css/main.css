@@ -113,6 +113,7 @@ img {
   font-weight: 600;
 }
 .cards__three {
+  position: relative;
   padding: 1em;
   padding-bottom: 0;
   background-color: var(--yellow-500);
@@ -123,8 +124,8 @@ img {
   font-weight: 600;
 }
 .cards__three-img {
-  width: 70%;
-  transform: translateY(20%);
+  position: absolute;
+  max-width: 80%;
 }
 .cards__four {
   padding: 1em;
@@ -290,16 +291,12 @@ img {
   .cards__two-img {
     max-width: 145%;
   }
-  .cards__three {
-    position: relative;
-  }
   .cards__three-title {
     margin-right: 1em;
     font-size: 2.4rem;
     font-weight: 500;
   }
   .cards__three-img {
-    position: absolute;
     width: 75%;
   }
   .cards__four {

@@ -73,6 +73,7 @@ img {
 		}
 	}
 	&__three {
+		position: relative;
 		@include mixins.padding;
 		padding-bottom: 0;
 		background-color: var(--yellow-500);
@@ -81,8 +82,9 @@ img {
 			@include mixins.second-title;
 		}
 		&-img {
-			width: 70%;
-			transform: translateY(20%);
+			position: absolute;
+			max-width: 80%;
+			
 		}
 	}
 	&__four {
@@ -264,14 +266,14 @@ img {
 			}
 		}
 		&__three {
-			position: relative;
+		
 			&-title {
 				margin-right: 1em;
 				font-size: 2.4rem;
 				font-weight: 500;
 			}
 			&-img {
-				position: absolute;
+				
 				width: 75%;
 			}
 		}
