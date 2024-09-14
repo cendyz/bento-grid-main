@@ -358,14 +358,14 @@ body {
 		&__ai {
 			grid-area: 4 / 1 / 7 / 2;
 			display: flex;
-			justify-content: space-between;
+			justify-content: space-around;
 			flex-direction: column;
 			padding: 0.8em;
 			padding-right: 0.4em;
 
 			&-title {
-				font-size: 2rem;
-				font-weight: 600;
+				font-size: 2.2rem;
+				font-weight: 500;
 				line-height: 0.9;
 			}
 
