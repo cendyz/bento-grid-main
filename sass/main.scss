@@ -1,4 +1,5 @@
 @use "./utilities/reset";
+@use "./utilities/mixins" as mixins;
 
 :root {
 	--purple-100: hsl(254, 88%, 90%);
@@ -10,47 +11,40 @@
 }
 
 body {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 90vh;
-	background-color: #f5f5f5;
+	display: grid;
+	place-content: center;
+	min-height: 100vh;
+	max-height: 100%;
+	margin: 2em 1em;
 	font-family: "DM Sans", system-ui;
 	font-size: 18px;
+	background-color: rgb(241, 238, 238);
 }
 
-.box {
-	margin-bottom: 2em;
-	border-radius: 8px;
-	overflow: hidden;
-
-	&-padding {
-		padding: 0.8em;
-	}
+section {
+	border-radius: 10px;
 }
 
-.card {
+img {
+	display: block;
+	max-width: 100%;
+	object-fit: contain;
+	object-position: center;
+}
+
+.cards {
 	display: grid;
-	grid-template-columns: 1fr;
-	padding: 1em;
-	max-width: 350px;
-
-	&__text {
-		font-size: 2.2rem;
-		font-weight: 500;
-		line-height: 1;
-	}
-
-	&__social {
-		padding: 2em;
+	row-gap: 1em;
+	width: 350px;
+	&__one {
+		padding: 2.5em;
 		background-color: var(--purple-500);
 		text-align: center;
 		color: var(--white);
-
 		&-title {
-			font-size: 4.4rem;
-			font-weight: 500;
+			font-size: 4.5rem;
 			line-height: 1;
+			font-weight: 500;
 
 			&--color {
 				color: var(--yellow-500);
@@ -60,315 +54,284 @@ body {
 				font-style: italic;
 			}
 		}
-
-		&-stars {
-			margin-top: 1.5em;
-			margin-bottom: 0.2em;
+		&-img {
+			margin: 1em auto 0.4em;
 			width: 70%;
 		}
-
 		&-text {
-			font-weight: 200;
-		}
-	}
-
-	&__platforms {
-		background-color: var(--white);
-
-		&-text {
-			margin-top: 0.8em;
-		}
-
-		&-img {
-			width: 100%;
-		}
-	}
-
-	&__schedules {
-		padding-bottom: 0;
-		background-color: var(--yellow-500);
-
-		&-img {
-			margin-top: 1em;
-			width: 70%;
-			display: block;
-		}
-	}
-
-	&__graph {
-		background-color: var(--purple-100);
-		text-align: center;
-
-		&-title {
-			margin: 0 0.5em;
-			margin-top: 0.5em;
-			margin-bottom: 1em;
-			font-size: 2.1rem;
-			font-weight: 500;
-		}
-
-		&-img {
-			width: 100%;
-		}
-
-		&-text {
-			margin: 1em 1em;
-			font-size: 1.6rem;
 			font-weight: 300;
 		}
 	}
 
-	&__followers {
-		padding: 1.3em;
-		background-color: var(--purple-500);
-		text-align: center;
+	&__two {
+		@include mixins.padding;
+		background-color: var(--white);
+		overflow: hidden;
+		&-title {
+			margin-top: 0.2em;
+			@include mixins.second-title;
+		}
+	}
+	&__three {
+		@include mixins.padding;
+		padding-bottom: 0;
+		background-color: var(--yellow-500);
+		overflow: hidden;
+		&-title {
+			@include mixins.second-title;
+		}
 		&-img {
-			width: 80%;
+			width: 70%;
+			transform: translateY(20%);
+		}
+	}
+	&__four {
+		@include mixins.padding;
+		background-color: var(--purple-100);
+		text-align: center;
+		&-title {
+			margin-top: 0.5em;
+			@include mixins.second-title;
+		}
+		&-img {
+			margin: 1em 0;
 		}
 		&-text {
-			margin: 0 1em;
-			margin-top: 1em;
-			font-size: 2.8rem;
-			font-weight: 500;
+			margin: 0 0.5em 0.5em;
+		}
+	}
+	&__five {
+		@include mixins.second-padding;
+		background-color: var(--purple-500);
+		&-img {
+			margin: 0 auto;
+			width: 80%;
+		}
+		&-title {
+			margin: 1.5em 1.5em 0;
+			font-size: 2.7rem;
+			font-weight: 400;
 			line-height: 1;
+			text-align: center;
 			color: var(--white);
 		}
 	}
-
-	&__audience {
-		padding: 1.3em;
-		background-color: var(--yellow-100);
-
+	&__six {
+		@include mixins.padding;
+		background-color: var(--white);
 		&-title {
-			font-size: 4rem;
+			font-size: 4.2rem;
 			font-weight: 500;
 		}
-
 		&-text {
-			margin: 0.8em 0;
-			font-weight: 300;
+			margin: 1em 0;
+			font-size: 1.7rem;
 		}
-
 		&-img {
-			width: 60%;
+			width: 50%;
 		}
 	}
-
-	&__create {
-		padding: 1.5em;
+	&__seven {
+		@include mixins.second-padding;
 		background-color: var(--yellow-100);
-
 		&-title {
-			margin-bottom: 0.8em;
-			font-size: 2.7rem;
+			font-size: 3rem;
 			font-weight: 500;
-			line-height: 1;
-
-			&--span {
-				color: var(--purple-500);
+			&--color {
 				font-style: italic;
+				color: var(--purple-500);
 			}
 		}
 		&-img {
-			width: 60%;
+			margin-top: 1.2em;
+			width: 65%;
 		}
 	}
-
-	&__ai {
-		padding: 1.1em;
+	&__eight {
+		@include mixins.second-padding;
 		background-color: var(--yellow-500);
-
 		&-title {
-			margin-bottom: 1em;
-			font-size: 2.6rem;
-			font-weight: 500;
+			font-weight: 600;
 			line-height: 0.9;
 		}
-
 		&-img {
+			margin-top: 1.5em;
 			width: 70%;
 		}
 	}
 }
 
-@media (min-width: 992px) {
-	.box {
-		margin-bottom: 0;
+@media (min-width: 768px) {
+	body {
+		padding: 4em 2em;
 	}
 
-	.card {
-		padding: 0;
-		min-width: 600px;
-		max-width: 45%;
-		height: 85%;
-		grid-template-columns: repeat(4, 25%);
-		grid-template-rows: repeat(2, 21%) 9% 20% 16% 13%;
-		grid-column-gap: 1em;
-		grid-row-gap: 1em;
+	.cards {
+		grid-template-areas:
+			"one one"
+			"two three"
+			"four four"
+			"five five"
+			"six seven"
+			"eight eight";
+		gap: 1em;
 
-		&__text {
-			font-size: 2rem;
-			font-weight: 500;
+		&__one {
+			grid-area: one;
 		}
-
-		&__social {
-			padding: 1.3em;
-			grid-area: 1 / 2 / 3 / 4;
-
+		&__two {
+			grid-area: two;
+			&-img {
+				max-width: 170%;
+			}
 			&-title {
-				margin-top: 0.2em;
-				font-size: 3.8rem;
-			}
-
-			&-stars {
-				width: 40%;
-				margin-bottom: 0;
-			}
-
-			&-text {
-				font-size: 1.2rem;
-			}
-		}
-
-		&__platforms {
-			grid-area: 3 / 2 / 5 / 3;
-			padding: 0.9em;
-			padding-bottom: 0;
-			padding-right: 0;
-
-			&-img {
-				width: 135%;
-			}
-
-			&-text {
-				margin: 0;
-				font-size: 1.7rem;
-				font-weight: 600;
-			}
-		}
-
-		&__schedules {
-			grid-area: 3 / 3 / 5 / 4;
-			position: relative;
-
-			&-img {
-				position: absolute;
-				width: 85%;
-				left: 50%;
-				margin-top: 0.8em;
-				transform: translateX(-50%);
-			}
-
-			&-text {
+				margin-top: 0.5em;
 				font-size: 1.5rem;
-				font-weight: 600;
 			}
 		}
-
-		&__graph {
-			grid-area: 1 / 4 / 5 / 5;
-			display: flex;
-			justify-content: space-around;
-			flex-direction: column;
-			padding: 1em;
-			padding-right: 0.5em;
-			text-align: left;
-
+		&__three {
+			grid-area: three;
 			&-title {
-				margin: 0;
-				font-size: 1.8rem;
-				font-weight: 500;
+				font-size: 1.5rem;
 			}
-
 			&-img {
-				width: 170%;
-			}
-
-			&-text {
-				margin: 0;
-				font-size: 1.1rem;
-				font-weight: 300;
+				width: 90%;
+				transform: translateY(10%);
 			}
 		}
-
-		&__followers {
-			grid-area: 5 / 3 / 7 / 5;
-			padding: 0.7em;
+		&__four {
+			grid-area: four;
+		}
+		&__five {
+			grid-area: five;
+		}
+		&__six {
+			grid-area: six;
 			display: flex;
+			flex-direction: column;
 			justify-content: space-evenly;
-			align-items: center;
-
-			&-img {
-				height: 100%;
-				width: 50%;
-			}
-
 			&-text {
-				margin: 0;
-				padding-left: 0.5em;
-				width: 50%;
 				font-size: 1.9rem;
-				text-align: left;
 			}
-		}
-
-		&__audience {
-			grid-area: 5 / 2 / 7 / 3;
-			display: flex;
-			justify-content: space-between;
-			flex-direction: column;
-			padding: 0.8em;
-
-			&-title {
-				font-size: 3rem;
-			}
-
-			&-text {
-				margin: 0;
-				margin-bottom: 1.5em;
-				font-size: 1rem;
-			}
-
-			&-img {
-				width: 80%;
-			}
-		}
-
-		&__create {
-			display: flex;
-			justify-content: center;
-			flex-direction: column;
-			grid-area: 1 / 1 / 4 / 2;
-			padding: 1em;
-
-			&-title {
-				font-size: 2.1rem;
-				font-weight: 600;
-
-				&--span {
-					font-weight: 500;
-				}
-			}
-
 			&-img {
 				width: 100%;
 			}
 		}
-
-		&__ai {
-			grid-area: 4 / 1 / 7 / 2;
-			display: flex;
-			justify-content: space-around;
-			flex-direction: column;
-			padding: 0.8em;
-			padding-right: 0.4em;
-
+		&__seven {
+			grid-area: seven;
 			&-title {
 				font-size: 2.2rem;
-				font-weight: 500;
-				line-height: 0.9;
 			}
+			&-img {
+				width: 100%;
+			}
+		}
+		&__eight {
+			grid-area: eight;
+			&-img {
+				width: 75%;
+			}
+		}
+	}
+}
 
+@media (min-width: 992px) {
+	body {
+		padding: 6em 3em;
+	}
+
+	img {
+		max-width: auto;
+	}
+
+	.cards {
+		width: 1000px;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-areas:
+			"seven one one four"
+			"seven two three four"
+			"eight two three four"
+			"eight six five five";
+		&__two {
+			overflow: hidden;
+			&-title {
+				margin-right: 0.8em;
+				font-size: 2.4rem;
+				font-weight: 500;
+			}
+			&-img {
+				max-width: 145%;
+			}
+		}
+		&__three {
+			position: relative;
+			&-title {
+				margin-right: 1em;
+				font-size: 2.4rem;
+				font-weight: 500;
+			}
+			&-img {
+				position: absolute;
+				width: 75%;
+			}
+		}
+		&__four {
+			text-align: left;
+			overflow: hidden;
+			&-img {
+				max-width: 150%;
+			}
+			&-text {
+				margin-right: 1em;
+				font-size: 1.6rem;
+			}
+		}
+		&__five {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			padding: 1em;
+			&-img {
+				display: inline-block;
+				width: 100%;
+			}
+			&-title {
+				align-self: center;
+				margin: 0;
+				margin-left: 0.3em;
+				font-size: 3rem;
+				font-weight: 500;
+				text-align: left;
+			}
+		}
+		&__six {
+			justify-content: space-between;
+			&-text {
+				margin: 0;
+				font-size: 1.6rem;
+			}
+			&-img {
+				width: 80%;
+			}
+		}
+		&__seven {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			&-title {
+				font-size: 3.3rem;
+				line-height: 1;
+			}
+		}
+		&__eight {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			padding: 1em;
+			&-title {
+				margin-right: 1em;
+				font-size: 2.8rem;
+				font-weight: 500;
+			}
 			&-img {
 				width: 100%;
 			}
