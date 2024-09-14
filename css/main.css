@@ -50,11 +50,12 @@ table {
 }
 
 body {
-  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #f5f5f5;
   font-family: "DM Sans", system-ui;
   font-size: 18px;
-  font-weight: 400;
 }
 
 .box {
@@ -70,11 +71,11 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   padding: 1em;
-  max-width: 100%;
+  max-width: 350px;
 }
 .card__text {
-  font-size: 2.5rem;
-  font-weight: bold;
+  font-size: 2.2rem;
+  font-weight: 500;
   line-height: 1;
 }
 .card__social {
@@ -84,7 +85,7 @@ body {
   color: var(--white);
 }
 .card__social-title {
-  font-size: 4.5rem;
+  font-size: 4.4rem;
   font-weight: 500;
   line-height: 1;
 }
@@ -98,6 +99,9 @@ body {
   margin-top: 1.5em;
   margin-bottom: 0.2em;
   width: 70%;
+}
+.card__social-text {
+  font-weight: 200;
 }
 .card__platforms {
   background-color: var(--white);
@@ -122,17 +126,19 @@ body {
   text-align: center;
 }
 .card__graph-title {
+  margin: 0 0.5em;
   margin-top: 0.5em;
   margin-bottom: 1em;
-  font-size: 2.3rem;
+  font-size: 2.1rem;
   font-weight: 500;
 }
 .card__graph-img {
   width: 100%;
 }
 .card__graph-text {
-  margin: 1em 1.5em;
-  font-size: 1.7rem;
+  margin: 1em 1em;
+  font-size: 1.6rem;
+  font-weight: 300;
 }
 .card__followers {
   padding: 1.3em;
@@ -144,8 +150,9 @@ body {
 }
 .card__followers-text {
   margin: 0 1em;
-  margin-top: 1.2em;
-  font-size: 3rem;
+  margin-top: 1em;
+  font-size: 2.8rem;
+  font-weight: 500;
   line-height: 1;
   color: var(--white);
 }
@@ -158,7 +165,8 @@ body {
   font-weight: 500;
 }
 .card__audience-text {
-  margin: 1em 0;
+  margin: 0.8em 0;
+  font-weight: 300;
 }
 .card__audience-img {
   width: 60%;
@@ -168,8 +176,8 @@ body {
   background-color: var(--yellow-100);
 }
 .card__create-title {
-  margin-bottom: 0.7em;
-  font-size: 2.8rem;
+  margin-bottom: 0.8em;
+  font-size: 2.7rem;
   font-weight: 500;
   line-height: 1;
 }
@@ -181,36 +189,33 @@ body {
   width: 60%;
 }
 .card__ai {
-  padding: 1.5em;
+  padding: 1.1em;
   background-color: var(--yellow-500);
 }
 .card__ai-title {
   margin-bottom: 1em;
   font-size: 2.6rem;
   font-weight: 500;
-  line-height: 1;
+  line-height: 0.9;
 }
 .card__ai-img {
   width: 70%;
 }
 
-@media (min-width: 768px) {
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+@media (min-width: 992px) {
   .box {
     margin-bottom: 0;
   }
   .card {
-    grid-template-columns: repeat(4, 150px);
-    grid-template-rows: repeat(2, 84px) 35px 80px 65px 50px;
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
+    max-width: 800px;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: repeat(2, 21%) 9% 20% 16% 13%;
+    grid-column-gap: 1em;
+    grid-row-gap: 1em;
   }
   .card__text {
-    font-size: 1.6rem;
+    font-size: 2rem;
+    font-weight: 500;
   }
   .card__social {
     padding: 1.3em;
@@ -234,55 +239,67 @@ body {
     width: 150%;
   }
   .card__platforms-text {
-    margin: 0;
+    margin: 0 0.5em;
+    margin-top: 0.3em;
   }
   .card__schedules {
     grid-area: 3/3/5/4;
+    position: relative;
   }
   .card__schedules-img {
-    margin-top: 0.3em;
-    width: 100%;
+    position: absolute;
+    width: 80%;
+    left: 50%;
+    margin-top: 0.5em;
+    transform: translateX(-50%);
   }
   .card__graph {
     grid-area: 1/4/5/5;
     text-align: left;
+    padding: 1.2em;
+    padding-right: 0;
   }
   .card__graph-title {
-    font-size: 1.6rem;
-    font-weight: bold;
+    margin-left: 0;
+    margin-bottom: 0.8em;
+    font-size: 2.1rem;
+    font-weight: 500;
   }
   .card__graph-img {
     width: 180%;
   }
   .card__graph-text {
-    margin: 0.5em;
-    font-size: 1rem;
+    margin: 0;
+    margin-right: 3em;
+    margin-top: 0.5em;
+    font-size: 1.2rem;
+    font-weight: 300;
   }
   .card__followers {
     grid-area: 5/3/7/5;
     padding: 0.7em;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
   }
   .card__followers-text {
-    align-self: center;
     margin: 0;
-    margin-left: 0.2em;
+    margin-left: 0.3em;
+    align-self: center;
     width: 75%;
     text-align: left;
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
   .card__audience {
     grid-area: 5/2/7/3;
-    padding: 0.3em;
+    padding: 0.7em;
   }
   .card__audience-text {
-    margin: 0.3em;
-    font-size: 1.05rem;
+    margin-bottom: 0.5em;
+    font-size: 1.4rem;
   }
   .card__audience-img {
-    margin-top: 0.5em;
-    width: 85%;
+    margin-top: 1.2em;
+    width: 80%;
   }
   .card__create {
     display: flex;
@@ -292,17 +309,17 @@ body {
     padding: 1em;
   }
   .card__create-title {
-    font-size: 1.8rem;
+    font-size: 2.8rem;
   }
   .card__create-img {
     width: 100%;
   }
   .card__ai {
     grid-area: 4/1/7/2;
-    padding: 1em;
+    padding: 0.8em;
   }
   .card__ai-title {
-    font-size: 2.2rem;
+    font-size: 2.6rem;
     line-height: 0.9;
   }
   .card__ai-img {
