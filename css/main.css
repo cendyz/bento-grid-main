@@ -53,6 +53,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 90vh;
   background-color: #f5f5f5;
   font-family: "DM Sans", system-ui;
   font-size: 18px;
@@ -207,8 +208,10 @@ body {
     margin-bottom: 0;
   }
   .card {
-    width: 800px;
-    height: 600px;
+    padding: 0;
+    min-width: 600px;
+    max-width: 45%;
+    height: 85%;
     grid-template-columns: repeat(4, 25%);
     grid-template-rows: repeat(2, 21%) 9% 20% 16% 13%;
     grid-column-gap: 1em;
@@ -227,21 +230,25 @@ body {
     font-size: 3.8rem;
   }
   .card__social-stars {
-    margin-top: 0.5em;
-    width: 45%;
+    width: 40%;
+    margin-bottom: 0;
   }
   .card__social-text {
     font-size: 1.2rem;
   }
   .card__platforms {
     grid-area: 3/2/5/3;
+    padding: 0.9em;
+    padding-bottom: 0;
+    padding-right: 0;
   }
   .card__platforms-img {
-    width: 150%;
+    width: 135%;
   }
   .card__platforms-text {
-    margin: 0 0.5em;
-    margin-top: 0.3em;
+    margin: 0;
+    font-size: 1.7rem;
+    font-weight: 600;
   }
   .card__schedules {
     grid-area: 3/3/5/4;
@@ -254,30 +261,30 @@ body {
     margin-top: 0.8em;
     transform: translateX(-50%);
   }
+  .card__schedules-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
   .card__graph {
     grid-area: 1/4/5/5;
     display: flex;
-    justify-content: space-evenly;
-    text-align: left;
+    justify-content: space-around;
     flex-direction: column;
     padding: 1em;
     padding-right: 0.5em;
+    text-align: left;
   }
   .card__graph-title {
     margin: 0;
-    font-size: 2.1rem;
+    font-size: 1.8rem;
     font-weight: 500;
   }
   .card__graph-img {
-    margin-top: 0.3em;
-    padding-right: 2em;
-    width: 189%;
-    max-height: 60%;
+    width: 170%;
   }
   .card__graph-text {
     margin: 0;
-    margin-right: 2.5em;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 300;
   }
   .card__followers {
@@ -285,25 +292,35 @@ body {
     padding: 0.7em;
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
+  }
+  .card__followers-img {
+    height: 100%;
+    width: 50%;
   }
   .card__followers-text {
     margin: 0;
-    margin-left: 0.3em;
-    align-self: center;
-    width: 75%;
+    padding-left: 0.5em;
+    width: 50%;
+    font-size: 1.9rem;
     text-align: left;
-    font-size: 2.5rem;
   }
   .card__audience {
     grid-area: 5/2/7/3;
-    padding: 0.7em;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 0.8em;
+  }
+  .card__audience-title {
+    font-size: 3rem;
   }
   .card__audience-text {
-    margin-bottom: 0.5em;
-    font-size: 1.4rem;
+    margin: 0;
+    margin-bottom: 1.5em;
+    font-size: 1rem;
   }
   .card__audience-img {
-    margin-top: 1.2em;
     width: 80%;
   }
   .card__create {
@@ -314,17 +331,26 @@ body {
     padding: 1em;
   }
   .card__create-title {
-    font-size: 2.8rem;
+    font-size: 2.1rem;
+    font-weight: 600;
+  }
+  .card__create-title--span {
+    font-weight: 500;
   }
   .card__create-img {
     width: 100%;
   }
   .card__ai {
     grid-area: 4/1/7/2;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
     padding: 0.8em;
+    padding-right: 0.4em;
   }
   .card__ai-title {
-    font-size: 2.6rem;
+    font-size: 2rem;
+    font-weight: 600;
     line-height: 0.9;
   }
   .card__ai-img {
