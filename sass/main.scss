@@ -10,7 +10,9 @@
 }
 
 body {
-	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	background-color: #f5f5f5;
 	font-family: "DM Sans", system-ui;
 	font-size: 18px;
@@ -27,7 +29,6 @@ body {
 }
 
 .card {
-	margin: auto;
 	display: grid;
 	grid-template-columns: 1fr;
 	padding: 1em;
@@ -195,7 +196,8 @@ body {
 	}
 
 	.card {
-		max-width: 800px;
+		width: 800px;
+		height: 600px;
 		grid-template-columns: repeat(4, 25%);
 		grid-template-rows: repeat(2, 21%) 9% 20% 16% 13%;
 		grid-column-gap: 1em;
