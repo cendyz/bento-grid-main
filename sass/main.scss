@@ -73,18 +73,17 @@ img {
 		}
 	}
 	&__three {
-		position: relative;
 		@include mixins.padding;
 		padding-bottom: 0;
 		background-color: var(--yellow-500);
+		height: 250px;
 		overflow: hidden;
 		&-title {
 			@include mixins.second-title;
 		}
 		&-img {
-			position: absolute;
+			margin-top: 1em;
 			max-width: 80%;
-			
 		}
 	}
 	&__four {
@@ -192,13 +191,16 @@ img {
 			}
 		}
 		&__three {
+			position: relative;
 			grid-area: three;
+			height: auto;
 			&-title {
 				font-size: 1.5rem;
 			}
 			&-img {
+				position: absolute;
+				top: 48%;
 				width: 90%;
-				transform: translateY(10%);
 			}
 		}
 		&__four {
@@ -266,14 +268,13 @@ img {
 			}
 		}
 		&__three {
-		
 			&-title {
 				margin-right: 1em;
 				font-size: 2.4rem;
 				font-weight: 500;
 			}
 			&-img {
-				
+				top: 59%;
 				width: 75%;
 			}
 		}
@@ -306,9 +307,12 @@ img {
 			}
 		}
 		&__six {
-			justify-content: space-between;
+			justify-content: center;
+			&-title {
+				font-size: 5.3rem;
+			}
 			&-text {
-				margin: 0;
+				margin: .5em 0em 2em 0;
 				font-size: 1.6rem;
 			}
 			&-img {

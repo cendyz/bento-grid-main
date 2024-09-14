@@ -109,22 +109,22 @@ img {
 }
 .cards__two-title {
   margin-top: 0.2em;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   font-weight: 600;
 }
 .cards__three {
-  position: relative;
   padding: 1em;
   padding-bottom: 0;
   background-color: var(--yellow-500);
+  height: 250px;
   overflow: hidden;
 }
 .cards__three-title {
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   font-weight: 600;
 }
 .cards__three-img {
-  position: absolute;
+  margin-top: 1em;
   max-width: 80%;
 }
 .cards__four {
@@ -134,7 +134,7 @@ img {
 }
 .cards__four-title {
   margin-top: 0.5em;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   font-weight: 600;
 }
 .cards__four-img {
@@ -225,14 +225,17 @@ img {
     font-size: 1.5rem;
   }
   .cards__three {
+    position: relative;
     grid-area: three;
+    height: auto;
   }
   .cards__three-title {
     font-size: 1.5rem;
   }
   .cards__three-img {
+    position: absolute;
+    top: 48%;
     width: 90%;
-    transform: translateY(10%);
   }
   .cards__four {
     grid-area: four;
@@ -297,6 +300,7 @@ img {
     font-weight: 500;
   }
   .cards__three-img {
+    top: 59%;
     width: 75%;
   }
   .cards__four {
@@ -328,10 +332,13 @@ img {
     text-align: left;
   }
   .cards__six {
-    justify-content: space-between;
+    justify-content: center;
+  }
+  .cards__six-title {
+    font-size: 5.3rem;
   }
   .cards__six-text {
-    margin: 0;
+    margin: 0.5em 0em 2em 0;
     font-size: 1.6rem;
   }
   .cards__six-img {
