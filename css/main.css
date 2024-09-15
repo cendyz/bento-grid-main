@@ -54,7 +54,7 @@ body {
   place-content: center;
   min-height: 100vh;
   max-height: 100%;
-  margin: 2em 1em;
+  margin: 3em 1.5em;
   font-family: "DM Sans", system-ui;
   font-size: 18px;
   background-color: rgb(241, 238, 238);
@@ -76,7 +76,7 @@ img {
 .cards {
   display: grid;
   row-gap: 1em;
-  width: 350px;
+  max-width: 350px;
 }
 .cards__one {
   padding: 2.5em;
@@ -204,9 +204,6 @@ img {
 }
 
 @media (min-width: 768px) {
-  body {
-    padding: 4em 2em;
-  }
   .cards {
     grid-template-areas: "one one" "two three" "four four" "five five" "six seven" "eight eight";
     gap: 1em;
@@ -272,14 +269,11 @@ img {
   }
 }
 @media (min-width: 992px) {
-  body {
-    padding: 6em 3em;
-  }
   img {
     max-width: auto;
   }
   .cards {
-    width: 1000px;
+    max-width: 1000px;
     grid-template-columns: repeat(4, 1fr);
     grid-template-areas: "seven one one four" "seven two three four" "eight two three four" "eight six five five";
   }
